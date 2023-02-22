@@ -1,0 +1,23 @@
+{
+  "name": "Github-Graph-Background",
+  "image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:18",
+  "postStartCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "zapu.vscode-aspell",
+        "christian-kohler.path-intellisense",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "christian-kohler.npm-intellisense"
+      ]
+    }
+  },
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "tmux"
+  },
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/tmux-apt-get:1": {},
+    "ghcr.io/guiyomh/features/vim:0": {}
+  }
+}

@@ -1,0 +1,69 @@
+name: Release
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+concurrency:
+  group: "release"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16, 18]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm ci
+        name: Install Dependencies
+      - run: npx depcheck --ignore-bin-package
+        name: Check for Unused or Implict Dependencies
+      - run: npm audit --omit=dev
+        if: ${{ github.actor != 'dependabot[bot]' }}
+        name: Check for Security Issues
+      - run: npm run test
+        name: Run Tests
+
+  release:
+    permissions:
+      packages: write
+      issues: write
+      contents: write
+    if: ${{ ( github.event_name == 'pull_request' && github.actor == 'dependabot[bot]' ) || github.event_name == 'push' }}
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+        name: Install Dependencies
+      - run: npm run build
+        name: Run Build
+      - run: npm run package
+        name: Run Package
+      - uses: cycjimmy/semantic-release-action@v3
+        name: Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  dependabot-auto-merge:
+    name: Dependabot Auto-Merge
+    if: ${{ github.event_name == 'pull_request' && github.actor == 'dependabot[bot]' }}
+    runs-on: ubuntu-latest
+    needs: release
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3

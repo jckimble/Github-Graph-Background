@@ -1,0 +1,7 @@
+node_modules
+background.png
+.env
+coverage
+github-graph-background
+dist
+examples
