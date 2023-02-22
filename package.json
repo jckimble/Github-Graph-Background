@@ -74,7 +74,7 @@
         {
           "assets": [
             {
-              "path": "examples/*.png"
+              "path": "examples"
             },
             {
               "path": "github-graph-background"
