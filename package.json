@@ -1,6 +1,6 @@
 {
   "name": "@jckimble/github-graph-background",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A toy program for getting your GitHub Contributions and creating a background image from it with many themes",
   "author": "James C Kimble Jr",
   "license": "MIT",
