@@ -47,6 +47,8 @@ jobs:
           node-version: 16
       - run: npm ci
         name: Install Dependencies
+      - run: npm run test
+        name: Run Tests
       - run: npm run build
         name: Run Build
       - run: npm run package
