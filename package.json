@@ -9,10 +9,10 @@
   },
   "main": "src/index.ts",
   "bin": {
-    "github-graph-background": "dist/index.js"
+    "github-graph-background": "cli.js"
   },
   "pkg": {
-    "scripts": "dist/index.js"
+    "scripts": "cli.js"
   },
   "repository": {
     "type": "git",
