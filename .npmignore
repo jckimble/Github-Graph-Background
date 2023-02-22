@@ -1,0 +1,10 @@
+node_modules
+background.png
+.env
+coverage
+github-graph-background
+examples
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+src
+tsconfig.json
