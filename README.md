@@ -8,16 +8,10 @@
 
 > A toy program for getting your GitHub Contributions and creating a background image from it with many themes.
 
-## Install
-
-```sh
-npm install @jckimble/github-graph-background
-```
-
 ## Usage
 
 ```sh
-github-graph-background
+npx @jckimble/github-graph-background
 ```
 
 ## Options
@@ -35,12 +29,52 @@ github-graph-background
 
 ## Themes
 
-> Small Images of themes are in [releases](https://github.com/jckimble/github-graph-background/releases/latest) named by the theme option.
 > Special value of random picks a theme at random. Default theme is green.
 > Current themes are: green, blue, red, rose, fullrandom and random along with their dark variants.
 > Adding :dark after a theme name generates the dark version.
 
-## Run tests
+### Green (green and green:dark)
+
+![green](https://github.com/jckimble/Github-Graph-Background/releases/latest/download/green.png)
+![green:dark](https://github.com/jckimble/Github-Graph-Background/releases/latest/download/green.dark.png)
+
+### Blue (blue and blue:dark)
+
+![blue](https://github.com/jckimble/Github-Graph-Background/releases/latest/download/blue.png)
+![blue:dark](https://github.com/jckimble/Github-Graph-Background/releases/latest/download/blue.dark.png)
+
+### Red (red and red:dark)
+
+![red](https://github.com/jckimble/Github-Graph-Background/releases/latest/download/red.png)
+![red:dark](https://github.com/jckimble/Github-Graph-Background/releases/latest/download/red.dark.png)
+
+### Rose (rose and rose:dark)
+
+![rose](https://github.com/jckimble/Github-Graph-Background/releases/latest/download/rose.png)
+![rose:dark](https://github.com/jckimble/Github-Graph-Background/releases/latest/download/rose.dark.png)
+
+### Full Random (fullrandom and fullrandom:dark)
+
+![fullrandom](https://github.com/jckimble/Github-Graph-Background/releases/latest/download/fullrandom.png)
+![fullrandom:dark](https://github.com/jckimble/Github-Graph-Background/releases/latest/download/fullrandom.dark.png)
+
+## From Source
+
+### Install
+
+```sh
+git clone https://github.com/jckimble/github-graph-background
+cd github-graph-background
+npm install
+```
+
+### Usage
+
+```sh
+npm run start
+```
+
+### Run tests
 
 ```sh
 npm run test

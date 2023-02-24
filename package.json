@@ -7,7 +7,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "src/index.ts",
   "bin": {
     "github-graph-background": "cli.js"
   },
