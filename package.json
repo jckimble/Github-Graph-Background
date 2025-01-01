@@ -21,7 +21,7 @@
     "url": "https://github.com/jckimble/Github-Graph-Background/issues"
   },
   "dependencies": {
-    "canvas": "^2.11.0",
+    "canvas": "^3.0.1",
     "commander": "^11.0.0",
     "graphql-request": "^5.1.0"
   },
