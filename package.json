@@ -23,7 +23,7 @@
   "dependencies": {
     "canvas": "^2.11.0",
     "commander": "^11.0.0",
-    "graphql-request": "^5.1.0"
+    "graphql-request": "^7.1.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.0.3",
