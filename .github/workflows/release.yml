@@ -53,7 +53,7 @@ jobs:
         name: Run Build
       - run: npm run package
         name: Run Package
-      - uses: cycjimmy/semantic-release-action@v4
+      - uses: cycjimmy/semantic-release-action@v5
         name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
